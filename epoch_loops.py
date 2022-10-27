@@ -6,8 +6,6 @@ CUDA = torch.cuda.is_available()
 def epoch_train(model, num_epochs, epoch, data_loader, loss_fn, optimizer):
     CUDA = torch.cuda.is_available()
     model.train()
-    if epoch % 5 == 0:
-        optimizer.param_groups[0]["lr"] *= 0.5
     sum_loss = 0
     sum_accuracy = 0
     iteration = 0
