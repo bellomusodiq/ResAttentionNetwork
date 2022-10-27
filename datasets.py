@@ -50,6 +50,8 @@ def image_augumentation(dataset):
 
 augumented_images = image_augumentation(train_data)
 
+augument_dataset = CustomDataset(augumented_images)
+
 train_data = torch.utils.data.ConcatDataset((train_data, augument_dataset))
 
 train_loader = torch.utils.data.DataLoader(train_data, batch_size=150, shuffle=True)
